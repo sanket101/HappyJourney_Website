@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Arial;
+    font-size: 17px;
+}
+#heading
+{
+    position:absolute;
+    font-size:30px;
+    margin-top:-1%;
+    margin-left:8%;
+    color:white;
+}
+span
+{
+    color:#ee00ee;
+}
+#nav {
+    background-color: #3F053F;
+}
+#nav_wrapper {
+    width:100%;
+    margin: 0 auto;
+    text-align:right;
+    height:120px;
+}
+#nav ul {
+    list-style-type:none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    min-width: 200px;
+    font-size:18px;
+    margin-right:30px;
+}
+#nav ul li {
+    display: inline-block;
+    margin-top:30px;
+}
+#nav ul li a:hover {
+   color: #ee00e3;
+}
+#nav ul li a{
+    color:#ffffff;
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+}
+#nav ul li:hover ul {
+    display: block;
+}
+#nav ul ul {
+    display: none;
+    position: absolute;
+    background-color: #3F053F;
+    border-top: 0;
+    margin-left: -5px;
+}
+#nav ul ul li {
+    display: block;
+    text-align:center;
+}
+#nav ul ul li a:hover {
+    color: #ee00e3;
+}
+#nav ul ul li a
+{
+    padding:0px;
+}
+input[type=text],input[type=email], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+}
+p{
+	color: blueviolet;
+	text-align: left:50
+}
+input[type=submit] {
+    background-color: #045ACA;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+.btn {
+    border: none;
+    color: white;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+}
+button.accordion {
+	margin-left:14%;
+    background-color:#3B3738;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 70%;
+    border: none;
+    text-align: center;
+    outline: none;
+    font-size: 20px;
+    transition: 0.4s;
+}
+
+button.accordion.active, button.accordion:hover {
+    background-color: #ddd;
+}
+
+button.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+a
+{
+	text-decoration:none;
+	color:white;
+}
+button.accordion.active:after {
+    content: "\2212";
+}
+
+div.panel {
+	margin-left:15%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+.success {background-color:#C63D0F;} /* Green */
+.success:hover {background-color: #46a049;}
+
+.info {background-color: #C63D0F;} /* Blue */
+.info:hover {background: #0b7dda;}
+
+.warning {background-color:#C63D0F;} /* Orange */
+.warning:hover {background: #e68a00;}
+
+.danger {background-color: #C63D0F;} /* Red */ 
+.danger:hover {background: #da190b;}
+div.info {
+    background-color: LightSteelBlue;
+    color: black;
+    margin: 20px 0 20px 0;
+    padding: 20px;
+} 
+</style>
+<script type="text/javascript" language="JavaScript">
+function checkpassword(theForm) {
+    if (theForm.new_password.value != theForm.confirm_password.value)
+    {
+        alert('Passwords don\'t match!');
+        return false;
+    } else {
+        return true;
+    }
+}
+
+function checkemail(theForm) {
+    if (theForm.new_email.value != theForm.confirm_email.value)
+    {
+        alert('Email Ids don\'t match!');
+        return false;
+    } else {
+        return true;
+    }
+}
+</script>
+</head>
+<body>
+<div id="nav">
+    <div id="heading">
+    <h1>HappyJourney</h1>
+    </div>
+    <div id="nav_wrapper">
+        <ul>
+            <li><a href="accountdetails.html"><h2>My Account</h2></a>
+            </li>
+            <li><a href="happyjourney.html">Logout</a>
+            </li>
+        </ul>
+    </div>        
+</div>
+<br><br><br><br>
+<button class="accordion">Change Password</button>
+<div class="panel">    
+    <form action="update_password.php" method="post" onsubmit="return checkpassword(this);">
+    <fieldset style="width:70%;">
+    Enter Current Password:<br>
+    <input type="password" name="current_password" placeholder=""><br>
+    Enter New Password:<br>
+    <input type="password" name="new_password" placeholder=""><br>
+    Enter Confirmed Password:<br>
+    <input type="password" name="confirm_password" placeholder=""><br><br>
+    <input type="SUBMIT" value = "Change Password"><br><br>
+    </fieldset>
+    </form>
+</div>
+<br><br>
+<button class="accordion">Change Email Address</button>
+<div class="panel">    
+    <form action="update_emailid.php" method="post" onsubmit="return checkemail(this);">
+    <fieldset style="width:70%;">
+    Enter New Email Id:<br>
+    <input type="text" name="new_email" placeholder=""><br>
+    Enter Confirmed Email Id:<br>
+    <input type="text" name="confirm_email" placeholder=""><br>
+    Enter password:<br>
+    <input type="password" name="password" placeholder=""><br><br>
+    <input type="SUBMIT" value = "Change Email Address"><br><br>
+    </fieldset>
+    </form>
+</div>
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].onclick = function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  }
+}
+</script>
+
+</body>
+</html>    

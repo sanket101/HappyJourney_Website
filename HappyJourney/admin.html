@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Arial;
+    font-size: 17px;
+}
+#heading
+{
+    position:absolute;
+    font-size:30px;
+    margin-top:-1%;
+    margin-left:8%;
+    color:white;
+}
+span
+{
+    color:#ee00ee;
+}
+#nav {
+    background-color: #3F053F;
+}
+#nav_wrapper {
+    width:100%;
+    margin: 0 auto;
+    text-align:right;
+    height:120px;
+}
+#nav ul {
+    list-style-type:none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    min-width: 200px;
+    font-size:18px;
+    margin-right:30px;
+}
+#nav ul li {
+    display: inline-block;
+    margin-top:30px;
+}
+#nav ul li a:hover {
+   color: #ee00e3;
+}
+#nav ul li a{
+    color:#ffffff;
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+}
+#nav ul li:hover ul {
+    display: block;
+}
+#nav ul ul {
+    display: none;
+    position: absolute;
+    background-color: #3F053F;
+    border-top: 0;
+    margin-left: -5px;
+}
+#nav ul ul li {
+    display: block;
+    text-align:center;
+}
+#nav ul ul li a:hover {
+    color: #ee00e3;
+}
+#nav ul ul li a
+{
+    padding:0px;
+}
+input[type=text],input[type=email], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+}
+p{
+	color: blueviolet;
+	text-align: left:50
+}
+input[type=submit] {
+    background-color: #045ACA;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+.btn {
+    border: none;
+    color: white;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+}
+button.accordion {
+	margin-left:14%;
+    background-color:#3B3738;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 70%;
+    border: none;
+    text-align: center;
+    outline: none;
+    font-size: 20px;
+    transition: 0.4s;
+}
+
+button.accordion.active, button.accordion:hover {
+    background-color: #ddd;
+}
+
+button.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+button.accordion.active:after {
+    content: "\2212";
+}
+
+div.panel {
+	margin-left:15%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+.success {background-color:#C63D0F;} /* Green */
+.success:hover {background-color: #46a049;}
+
+.info {background-color: #C63D0F;} /* Blue */
+.info:hover {background: #0b7dda;}
+
+.warning {background-color:#C63D0F;} /* Orange */
+.warning:hover {background: #e68a00;}
+
+.danger {background-color: #C63D0F;} /* Red */ 
+.danger:hover {background: #da190b;}
+</style>
+</head>
+<body>
+<div id="nav">
+    <div id="heading">
+    <h1>HappyJourney</h1>
+    </div>
+    <div id="nav_wrapper">
+        <ul>
+            <li><a href="happy_journey.php">Home</a>
+            </li>
+            <li> <a href="flight.html">Flights</a>
+            </li>
+            <li> <a href="aboutus.html">About Us</a>
+            </li>
+            <li> <a href="contact.html">Contact Us</a>
+			</li>
+			<li><a href="logout.php">Logout</a>
+            </li>
+        </ul>
+    </div>
+    <!-- Nav wrapper end -->
+</div>
+<h1 style="text-align:center;">Admin Panel</h1>
+<br>
+<button class="accordion">Click To Show Database</button>
+<div class="panel">
+	<br>
+	<form action="from_to.php" method="post">
+		Enter From_city<input type="text" name="From" style="width:200px"/><br>
+		Enter To_city<input type="text" name="To" style="width:200px"/><br>
+		<button class="btn success">Display</button><br><br>
+	</form>
+	<form action="Date.php" method="post">
+		Enter Date<input type="text" name="Date" style="width:200px"/><br>
+		<button class="btn success">Display</button><br><br>
+	</form>
+	<form action="cost(1).php" method="post">
+		Enter Cost<input type="text" name="Price" style="width:200px"/><br>
+		<button class="btn success">Display</button><br><br>
+	</form>
+	<form action="admin_display.php" method="post">
+		Enter Flight Number<input type="text" name="flightid" style="width:200px"/><br>
+		<button class="btn success">Display</button><br><br>
+	</form>
+	<form action="listing.php" method="post">
+		<button class="btn success">Show Full Database of Flights</button><br><br>
+	</form>
+	<form action="fulldisplayuser.php" method="post">
+		<button class="btn success">Show Full Database of User</button><br><br>
+	</form>
+	<form action="displayreguser.php" method="post">
+		<button class="btn success">Show Full Database of User Who Booked Tickets</button><br><br>
+	</form>
+</div>
+<br>
+<button class="accordion">Click To Cancel a Ticket</button>
+<div class="panel">
+	<form action="ticketcancellation2.php" method="post">
+	<fieldset style="width:70%;">
+    Enter Ticket Number:<br>
+	<input type="text" name="ticketno" placeholder=""><br>
+	Enter Flight Number
+	<input type="text" name="flightid" placeholder="">
+	Enter Class
+	<input type="text" name="cla" placeholder="">
+	<button class="btn success">Cancel</button><br><br>
+  </fieldset>
+<br>
+</form>
+</div>
+<br>
+<button class="accordion">Click To Change Price</button>
+<div class="panel">
+	<form action="change_ticketprice.php" method="post">
+	<fieldset style="width:70%;">
+	Flight Id:<br>
+	<input type="text" name="flightid" placeholder="">
+	Class:<br>
+	<input type="text" name="class" placeholder="Economy">
+	Updated Cost:<br>
+	<input type="text" name="newcost" placeholder="">
+	<br>
+	<br>
+	<button class="btn warning">Update</button><br>
+</fieldset>
+</form>
+<br>
+</div>
+<br>
+<button class="accordion">Click To Add Flights</button>
+<div class="panel">
+	<form action="addflight.php" method="post">
+	<fieldset style="width:70%;">
+	From City:<br>
+	<input type="text" name="From" placeholder="">
+	To City:<br>
+	<input type="text" name="To" placeholder="">
+	Date:<br>
+	<input type="date" name="Date" placeholder=""><br>
+	Duration:<br>
+	<input type="text" name="Duration" placeholder="">
+	Departure:<br>
+	<input type="text" name="Departure" placeholder="">
+	Arrival:<br>
+	<input type="text" name="Arrival" placeholder="">
+	Economy Price:<br>
+	<input type="text" name="Economy_Price" placeholder="">
+	Premium Price:<br>
+	<input type="text" name="Premium_Price" placeholder="">
+	Business Price:<br>
+	<input type="text" name="Business_Price" placeholder="">
+	Economy Seats:<br>
+	<input type="text" name="Economy_Seats" placeholder="">
+	Premium Seats:<br>
+	<input type="text" name="Premium_Seats" placeholder="">
+	Business Seats:<br>
+	<input type="text" name="Business_Seats" placeholder="">
+	Company:<br>
+	<input type="text" name="Company" placeholder="">
+	Flight No.:<br>
+	<input type="number" name="FlightNo" placeholder="">
+	<br>
+	<br>
+	<button class="btn warning">Add</button><br>
+</fieldset>
+</form>
+<br>
+</div>
+<br>
+<button class="accordion">Click To Delete A Flight</button>
+<div class="panel">
+	<form action="deleteflight.php" method="post">
+	<fieldset style="width:70%;">
+	Enter Flight Number
+	<input type="number" name="flightid" placeholder="">
+	<button class="btn success">Delete</button><br><br>
+  </fieldset>
+<br>
+</form>
+</div>
+<br>
+</div>
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].onclick = function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  }
+}
+</script>
+
+</body>
+</html>

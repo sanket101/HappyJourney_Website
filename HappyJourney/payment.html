@@ -1,0 +1,178 @@
+<html>
+<head>
+<style>
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Arial;
+    font-size: 17px;
+}
+#heading
+{
+	position:absolute;
+	font-size:30px;
+	margin-top:-1%;
+	margin-left:8%;
+	color:white;
+}
+span
+{
+	color:#ee00ee;
+}
+#nav {
+    background-color: #3F053F;
+}
+#nav_wrapper {
+    width:100%;
+    margin: 0 auto;
+	text-align:right;
+	height:120px;
+}
+#nav ul {
+    list-style-type:none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    min-width: 200px;
+	font-size:18px;
+	margin-right:30px;
+}
+#nav ul li {
+    display: inline-block;
+	margin-top:30px;
+}
+#nav ul li a:hover {
+   color: #ee00e3;
+}
+#nav ul li a{
+	color:#ffffff;
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+}
+#nav ul li:hover ul {
+    display: block;
+}
+#nav ul ul {
+    display: none;
+    position: absolute;
+    background-color: #3F053F;
+    border-top: 0;
+    margin-left: -5px;
+}
+#nav ul ul li {
+    display: block;
+	text-align:center;
+}
+#nav ul ul li a:hover {
+    color: #ee00e3;
+}
+#nav ul ul li a
+{
+	padding:0px;
+}
+#subhead h1
+{
+	text-align:center;
+	font-size:60px;
+}
+/* Style the tab */
+div.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the links inside the tab */
+div.tab a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of links on hover */
+div.tab a:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+div.tab a:focus, .active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+</style>
+</head>
+<body>
+<div id="nav">
+	<div id="heading">
+	<h1>HappyJourney</h1>
+	</div>
+    <div id="nav_wrapper">
+		<ul>
+            <li><a href="happyjourney.html">Home</a>
+            </li>
+            <li> <a href="flight.html">Flights</a>
+            </li>
+            <li> <a href="aboutus.html">About Us</a>
+            </li>
+            <li> <a href="contact.html">Contact Us</a>
+        </ul>
+    </div>
+    <!-- Nav wrapper end -->
+</div>
+<!-- Nav end -->
+<div id="subhead">
+	<h1>Choose Payment Mode</h1>
+</div>
+<div class="tab">
+  <a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'London')"  id="defaultOpen">London</a>
+  <a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Paris')">Paris</a>
+  <a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</a>
+</div>
+
+<div id="London" class="tabcontent">
+  <h3>London</h3>
+  <p>London is the capital city of England.</p>
+</div>
+
+<div id="Paris" class="tabcontent">
+  <h3>Paris</h3>
+  <p>Paris is the capital of France.</p> 
+</div>
+
+<div id="Tokyo" class="tabcontent">
+  <h3>Tokyo</h3>
+  <p>Tokyo is the capital of Japan.</p>
+</div>
+<script>
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+</body>
+</html>

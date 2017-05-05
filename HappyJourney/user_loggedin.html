@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Arial;
+    font-size: 17px;
+}
+#heading
+{
+    position:fixed;
+    font-size:30px;
+    margin-top:-1%;
+    margin-left:8%;
+    color:white;
+}
+span
+{
+    color:#ee00ee;
+}
+#nav {
+    background-color: #3F053F;
+}
+#nav_wrapper {
+    width:100%;
+    margin: 0 auto;
+    text-align:right;
+    height:120px;
+}
+#nav ul {
+    list-style-type:none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    min-width: 200px;
+    font-size:18px;
+    margin-right:30px;
+}
+#nav ul li {
+    display: inline-block;
+    margin-top:30px;
+}
+#nav ul li a:hover {
+   color: #ee00e3;
+}
+#nav ul li a{
+    color:#ffffff;
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+}
+#nav ul li:hover ul {
+    display: block;
+}
+#nav ul ul {
+    display: none;
+    position: absolute;
+    background-color: #3F053F;
+    border-top: 0;
+    margin-left: -5px;
+}
+#nav ul ul li {
+    display: block;
+    text-align:center;
+}
+#nav ul ul li a:hover {
+    color: #ee00e3;
+}
+#nav ul ul li a
+{
+    padding:0px;
+}
+input[type=text],input[type=email], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+}
+p{
+	color: blueviolet;
+	text-align: left:50
+}
+input[type=submit] {
+    background-color: #045ACA;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+.btn {
+    border: none;
+    color: white;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+}
+button.accordion {
+	margin-left:14%;
+    background-color:#3B3738;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 70%;
+    border: none;
+    text-align: center;
+    outline: none;
+    font-size: 20px;
+    transition: 0.4s;
+}
+
+button.accordion.active, button.accordion:hover {
+    background-color: #ddd;
+}
+
+button.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+a
+{
+	text-decoration:none;
+	color:white;
+}
+button.accordion.active:after {
+    content: "\2212";
+}
+
+div.panel {
+	margin-left:15%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+.success {background-color:#C63D0F;} /* Green */
+.success:hover {background-color: #46a049;}
+
+.info {background-color: #C63D0F;} /* Blue */
+.info:hover {background: #0b7dda;}
+
+.warning {background-color:#C63D0F;} /* Orange */
+.warning:hover {background: #e68a00;}
+
+.danger {background-color: #C63D0F;} /* Red */ 
+.danger:hover {background: #da190b;}
+</style>
+</head>
+<body>
+<div id="nav">
+    <div id="heading">
+    <h1>HappyJourney</h1>
+    </div>
+    <div id="nav_wrapper">
+        <ul>
+            <li><a href="happy_journey.php">Home</a>
+            </li>
+            <li> <a href="flight.html">Flights</a>
+            </li>
+            <li> <a href="aboutus.html">About Us</a>
+            </li>
+            <li> <a href="contact.html">Contact Us</a>
+            </li>
+            <li><a href="accountdetails.html">My Account</a>
+            </li>
+            <li><a href="logout.php">Logout</a>
+            </li>
+        </ul>
+    </div>
+    <!-- Nav wrapper end -->
+</div>
+<h1 style="text-align:center;">User Panel</h1>
+<br>
+<button class="accordion">Click To Book Tickets</button>
+<div class="panel">
+	<br>
+	<a href="flight2.html"><button class="btn success">Book Flight</button></a><br><br>
+</div>
+<br>
+<button class="accordion">Click To Cancel a Ticket</button>
+<div class="panel">
+	<form action="ticketcancellation.php" method="post">
+	<fieldset style="width:70%;">
+    Enter Ticket Number:<br>
+	<input type="text" name="ticketno" placeholder=""><br>
+	Enter Flight Number:
+	<input type="text" name="flightid" placeholder=""><br>
+	Enter Class:
+	<input type="text" name="cla" placeholder=""><br>
+	<button class="btn success">Cancel</button><br><br>
+  </fieldset>
+<br>
+</form>
+</div>
+<br>
+<button class="accordion">View eTicket</button>
+<div class="panel">
+    <form action="eticket.php" method="post">
+    <fieldset style="width:70%;">
+    Enter Ticket Number:<br>
+    <input type="text" name="ticketno" placeholder=""><br>
+    <button class="btn success">View eTicket</button><br><br>
+  </fieldset>
+<br>
+</form>
+</div>
+<br>
+<button class="accordion">Booking History</button>
+<div class="panel">
+    <form action="bookinghistory.php" method="post">
+    <fieldset style="width:70%;">
+    <button class="btn success">Show</button><br><br>
+  </fieldset>
+<br>
+</form>
+</div>
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].onclick = function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  }
+}
+</script>
+
+</body>
+</html>

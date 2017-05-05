@@ -1,0 +1,41 @@
+<html>
+  <head>
+  <title>My Now Amazing Webpage</title>
+  <style>
+	#pics {  
+    height:  232px;  
+    width:   232px;  
+    padding: 0;  
+    margin:  0;  
+	} 
+ 
+	#pics img {  
+    padding: 15px;  
+    border:  1px solid #ccc;  
+    background-color: #eee;  
+    width:  1200px; 
+    height: 600px; 
+    top:  0; 
+    left: 0 
+	} 
+  </style>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.cycle/3.0.3/jquery.cycle.all.min.js"></script>
+  </head>
+  <body>
+
+  <div id="pics"> 
+    <img src="previtemplate-1.png" width="200" height="200" /> 
+    <img src="ebooks-templates-1.png" width="200" height="200" /> 
+    <img src="t2-1.png" width="200" height="200" /> 
+</div> 
+
+	<script>
+		$('#pics').cycle({ 
+		fx:    'fade', 
+		speed:  1000 
+	});
+		
+	</script>
+  </body>
+</html>

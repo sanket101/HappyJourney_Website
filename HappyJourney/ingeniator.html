@@ -1,0 +1,454 @@
+<html>
+<head>
+<title>Engeniator.com</title>
+<meta charset="utf-8"/>
+
+<style type="text/css">
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Arial;
+    font-size: 17px;
+}
+#logo
+{
+	position:absolute;
+	margin-left:2%;
+	margin-top:1.75%;
+}
+#nav {
+    background-color:transparent;
+}
+#nav_wrapper {
+    width:100%;
+    margin: 0 auto;
+	text-align:right;
+	height:120px;
+}
+#nav ul {
+    list-style-type:none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    min-width: 200px;
+	font-size:18px;
+	margin-right:30px;
+}
+#nav ul li {
+    display: inline-block;
+	margin-top:30px;
+}
+#nav ul li a:hover {
+   color: #ee00e3;
+}
+#nav ul li a{
+	color:#ffffff;
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+}
+#nav ul li:hover ul {
+    display: block;
+}
+#nav ul ul {
+    display: none;
+    position: absolute;
+    background-color: #3F053F;
+    border-top: 0;
+    margin-left: -5px;
+}
+#nav ul ul li {
+    display: block;
+	text-align:center;
+}
+#nav ul ul li a:hover {
+    color: #ee00e3;
+}
+#nav ul ul li a
+{
+	padding:0px;
+}
+#bg_image
+{
+	background-image:url(coffee4.png);
+	background-size:cover;
+	background-position:center center;
+	background-repeat:no-repeat;
+	position:relative;
+	top:0px;
+	height:100%;
+	width:100%;
+}
+#heading
+{
+	position:absolute;
+	margin-top:-1.5%;
+	margin-left:10%;
+	color:white;
+	font-size:2.5vw;
+}
+#fone
+{
+	position:relative;
+	margin-left:10%;
+	margin-right:10%;
+}
+#fone img
+{
+	max-width:1000px;
+}
+#ftwo
+{
+	position:relative;
+	margin-left:10%;
+	margin-top:5%;
+	margin-right:10%;
+}
+#ftwo img
+{
+	max-width:1000px;
+}
+#fthree
+{
+	position:relative;
+	margin-left:10%;
+	margin-top:5%;
+	margin-right:10%;
+}
+#fthree img
+{
+	max-width:1000px;
+}
+#ffour
+{
+	position:relative;
+	margin-left:10%;
+	margin-top:5%;
+	margin-right:10%;
+}
+#ffour img
+{
+	max-width:1000px;
+}
+#features
+{
+	position:relative;
+	padding-bottom:100px;
+	background-color:#E8E8E8;
+	width:100%;
+}
+#subhead
+{
+	position:relative;
+	padding:5px;
+	font-size:30px;
+	margin-left:10%;
+	margin-right:10%;
+	color:#3f053f;
+}
+#topic
+{
+	color:#3f053f;
+	font-size:30px;
+	text-align:center;
+}
+#description
+{
+	font-size:20px;
+	margin-left:5%;
+	margin-right:5%;
+	text-indent:2%;
+}
+span
+{
+	color:#ee00ee;
+}
+#footer
+{
+	position:relative;
+	background-color:#3f053f;
+	margin-bottom:0px;
+	width:100%;
+	height:60px;
+	text-align:left;
+}
+#footer ul
+{
+	list-style-type:none;	
+}
+#footer ul li
+{
+	padding:15px;
+	padding-top:20px;
+	padding-bottom:0px;
+	display:inline-block;
+}
+#footer ul li a
+{
+	text-decoration:none;
+	color:white;
+}
+#footer ul li a:hover
+{
+	color:#ee00ee;
+}
+#aboutus
+{
+	position:relative;
+	background-image:url(wer.jpg);
+	width:100%;
+	height:auto;
+}
+#subtopics
+{
+	position:relative;
+	padding:3px;
+	left:10%;
+	margin-right:10%;
+	font-size:30px;
+	color:white;
+}
+#subcontent
+{
+	position:relative;
+	padding:5px;
+	text-align:centre;
+	margin-top:-3%;
+	left:5%;
+	margin-right:10%;
+	color:white;
+	font-size:20px;
+}
+#contact
+{
+	position:relative;
+	width:100%;
+	height:30%;
+	margin-top:-3%;
+}
+#leftblock
+{
+	position:relative;
+	width:50%;
+	height:80%;
+	background-color:#aeaeae;
+}
+#contacthead
+{
+	position:relative;
+	left:20%;
+	color:#3f053f;
+	font-size:30px;
+}
+#contactcontent
+{
+	position:relative;
+	left:5%;
+	font-size:20px;
+}
+#rightblock
+{
+	position:relative;
+	width:40%;
+	height:80%;
+	left:51%;
+	top:-80%;
+}
+#name
+{
+	height:30px;
+}
+#mail
+{
+	height:30px;
+}
+#message
+{
+	height:30px;
+}
+#tagline
+{
+	position:relative;
+	margin-top:7%;
+	margin-left:8%;
+	margin-right:8%;
+	color:white;
+	font-size:65px;
+	font-weight:bold;
+}
+#bg_imageinfo
+{
+	postition:relative;
+	font-size:22px;
+	color:white;
+	padding-bottom:10px;
+	margin-top:1%;
+	margin-left:8%;
+	margin-right:8%;
+}
+@media (max-height:570px)
+{
+	#bg_image
+	{
+		height:auto;
+	}
+}
+@media (max-width:600px)
+{
+	#logo
+	{
+		width:120%;
+		height:120%;
+	}
+}
+@media (max-width:1200px) {
+	#subcontent
+	{
+		font-size:15px;
+	}
+	#tagline
+	{
+		font-size:30px;
+	}
+	#bg_imageinfo
+	{
+		font-size:15px;
+	}
+	#heading
+	{
+		display:none;
+	}
+	#nav_wrapper
+	{
+		display:none;
+	}
+	#nav ul li 
+	{
+			display:block;
+			padding:0;
+			margin:0;
+			text-align:right;
+	}
+	.nav-btn
+	{
+		display:block;
+		font-size:40px;
+		text-align:right;
+		margin-right:4%;
+		cursor:pointer;
+	}
+	.nav-btn:before
+	{
+		content: "=";
+		color:white;
+	}
+}
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script>
+	$('span.nav-btn').click(function(){
+	
+		$('#nav_wrapper').toggle();
+	});
+</script>
+</head>
+<body onload="Load()">
+<div id="bg_image">
+<div id="nav">
+	<div id="logo">
+		<img src="logo5.png" width="10%" height="10%">
+	</div>
+	<div id="heading">
+		<h1>Eng<span>en</span>iator</h1>
+	</div>
+	<span class="nav-btn"></span>
+    <div id="nav_wrapper">
+		<ul>
+            <li><a href="ingeniator.html">Home</a>
+            </li>
+            <li> <a href="ebook.html">E-books</a>
+            </li>
+            <li> <a href="previousyearpapers.html">Previous Year Papers</a>
+            </li>
+            <li> <a href="onlinecourse.html">Online Courses</a>
+            </li>
+            <li> <a href="practicals.html">Practicals</a>
+            </li>
+        </ul>
+    </div>
+    <!-- Nav wrapper end -->
+</div>
+<!-- Nav end -->
+<div id="bg_imagecontent">
+	<div id="tagline">
+		AWESOME WEBSITE FOR<br>ENGINEERS TO HELP THEM IN<br>CLEARING EXAMINATION
+	</div>
+	<div id="bg_imageinfo">
+		We are a group of students from different engineering colleges<br>aimed to help our friends by providing them with study materials<br>such as 
+		previous year question papers, e-books, online courses,<br>practicals,etc.
+	</div>
+</div>
+</div>
+
+<div id="features">
+	<div id="subhead">
+		<h1>Features of website</h1>
+	</div>
+	<div id="fone">
+		<img src="previtemplate-1.png" width="100%">
+	</div>
+	<div id="ftwo">
+		<img src="ebooks-templates-1.png" width="100%">
+	</div>
+	<div id="fthree">
+		<img src="t2-1.png" width="100%">
+	</div>
+	<div id="ffour">
+		<img src="t3-1.png" width="100%">
+	</div>
+</div>
+<div id="aboutus">
+	<div id="subtopics">
+		<h1>About Us</h1>
+	</div>
+	<div id="subcontent">
+		<p>We are going through same phase as yours and we do understand the difficult situations through which you pass.We are also<br>engineering students studying in 1st year,2nd year, 3rd year and final year respectively</p>
+	</div>
+</div>
+<div id="contact">
+	<div id="leftblock">
+		<div id="contacthead">
+			<h1>Contact Us!!!</h1>
+		</div>
+		<div id="contactcontent">
+			<p>Feel free to tell any suggestion that could help budding engineers...We are<br>also open for any messages you have in your mind.</p>
+		</div>
+	</div>
+	<div id="rightblock">
+	<form>
+	<fieldset>
+	<legend>Information</legend>
+	<input type="text" name="yourname" placeholder="Your Name..." size="80" id="name"><br><br>
+	<input type="email" name="yourmail" placeholder="Your E-mail Id..." size="80" id="mail"><br><br>
+	<textarea name="yourmessage" placeholder="Your Message..." rows="5" cols="80" size="80" id="message"></textarea>
+	</fieldset>
+	</form>
+	</div>
+</div>
+<div id="footer">
+	<ul>
+            <li><a href="ingeniator.html">Home</a>
+            </li>
+            <li> <a href="ebook.html">E-books</a>
+            </li>
+            <li> <a href="previousyearpapers.html">Previous Year Papers</a>
+            </li>
+            <li> <a href="onlinecourse.html">Online Courses</a>
+            </li>
+            <li> <a href="practicals.html">Practicals</a>
+            </li>
+    </ul>
+</div>
+</body>
+</html>

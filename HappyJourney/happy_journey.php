@@ -1,0 +1,566 @@
+<?php
+	session_start();
+	$_SESSION['user']= 'Guest';
+?>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>navigation</title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="style.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.cycle/3.0.3/jquery.cycle.all.min.js"></script>
+	<script type="text/javascript" src="code.js"></script>			
+	<style>
+	#button1,#button2{
+		 background-color: #FFDEAD; /* Green */
+    border: none;
+    color: black;
+	font-weight:bold;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+	border-radius:12px;
+	}
+	#info
+{
+	background-color:#E2E2E2;
+	width:100%;
+	heigth:auto;
+}
+#info_hj
+{
+	color:black;
+	margin-left:5%;
+	margin-right:auto;
+	padding:5px;
+}
+#footer
+{
+	background-color:#0A1123;
+	heigth:auto;
+	width:100%;
+}
+#footer_content
+{
+	color:white;
+	text-align:center;
+	padding:10px;
+	margin-left:auto;
+}
+#footer_content a
+{
+	color:white;
+	text-decoration:none;
+}
+#subhead
+{
+	position:relative;
+	padding:5px;
+	font-size:30px;
+	margin-left:10%;
+	margin-right:10%;
+	color:#3f053f;
+}
+
+#topic
+{
+	color:#3f053f;
+	font-size:30px;
+	text-align:center;
+}
+#description
+{
+	font-size:20px;
+	margin-left:5%;
+	margin-right:5%;
+	text-indent:2%;
+}
+span
+{
+	color:#ee00ee;
+}
+#aboutus
+{
+	position:relative;
+	background-image:url(wer.jpg);
+	width:100%;
+	height:auto;
+}
+#subtopics
+{
+	position:relative;
+	padding:3px;
+	left:10%;
+	margin-right:10%;
+	font-size:30px;
+	color:white;
+}
+#subcontent
+{
+	position:relative;
+	padding:5px;
+	text-align:centre;
+	margin-top:-3%;
+	left:5%;
+	margin-right:10%;
+	color:white;
+	font-size:20px;
+}
+button {
+    background-color: #FCFBE3;
+    color: black;
+    padding: 14px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+}
+.signupbtn 
+{
+	background-color:blue;
+}
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn,.signupbtn {
+    float: left;
+    width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+    padding: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    color: #000;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+    .cancelbtn, .signupbtn {
+        width: 100%;
+    }
+}
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5px auto; /* 15% from the top and centered */
+    border: 1px solid #888;
+    width: 100%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    /* Position it in the top right corner outside of the modal */
+    position: absolute;
+    right: 25px;
+    top: 0; 
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+/* Close button on hover */
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+.mySlides {display:none}
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 13px;
+  width: 13px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+	</style>
+</head>     
+<body>
+<img id="image" src="bg.jpg">
+
+<!--NAVIGATION
+=================================================================================================================================-->
+		<section class="navbar navbar-fixed-top custom-navbar" role="navigation">
+		<div id="logo">
+			<h1 style="color:white;"><a href="happy_journey.html" style="text-decoration:none;color:white;">HappyJourney</a></h1>
+		</div>
+		<div id="heading">
+			
+		</div>
+		<div class="container">
+			<div class="navbar-header">
+									
+			</div>
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="happy_journey.php" class="smoothScroll">Home</a></li> 
+					<li><a href="flight.html" class="smoothScroll">Flights</a></li>
+					<li><a href="aboutus.html" class="smoothScroll">About Us</a></li>
+					<li><a href="contact.html" class="smoothScroll">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+		</section>
+<!--END OF NAVIGATION
+=================================================================================================================-->
+<div id="bg_imagecontent">
+	<div id="tagline" style="font-size:45px;font-weight:normal;margin-top:-35%;">
+		The Most Trusted Website<br> For Booking Flights<br>At Affordable Rates
+	</div>
+	<div id="bg_imageinfo" style="margin-left:60%;margin-top:-18%;">
+			<button id="button1" onclick="document.getElementById('id01').style.display='block'" style="width:auto; margin-left:45%;" >Sign Up</button>
+			<br>
+			<br>
+			<button id="button2" onclick="document.getElementById('id02').style.display='block'" style="width:auto; margin-left:45%;">Login</button>
+	</div>
+</div>
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+  <form class="modal-content animate" action="userinfosignup.php" method="post">
+    <div class="container">
+	  <label><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="Username" required>
+      
+	  <label><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="EmailId" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="Password" required>
+
+      <input type="checkbox" checked="checked"> Remember me
+      <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="submit" class="signupbtn">Sign Up</button>
+      </div>
+    </div>
+  </form>
+</div>
+<!-- The Modal -->
+<div id="id02" class="modal">
+  <span onclick="document.getElementById('id02').style.display='none'" 
+class="close" title="Close Modal">&times;</span>
+
+  <!-- Modal Content -->
+  <form class="modal-content animate" action="userinfologin.php" method="post">
+   
+    <div class="container">
+      <label><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="Username" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="Password" required>
+
+      <button type="submit" style="background-color:blue;">Login</button>
+      <input type="checkbox" checked="checked"> Remember me
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
+<div id="features" style="background-color:#00B7EB;position:relative;margin-top:450px">
+	<div id="head_features">
+		<h1 style="text-align:center;padding:50px;">Trending Offers</h1>
+	</div>
+	<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="offer1.jpg" style="width:100%">
+  <div class="text">Caption Text</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="offer2.jpg" style="width:100%">
+  <div class="text">Caption Two</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="offer3.jpg" style="width:100%">
+  <div class="text">Caption Three</div>
+</div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+</div>
+<div id="info">
+	<div id="info_hj">
+		<h3>Why HappyJourney?<h3>
+		<br>
+		The leading player in online flight bookings in India, HappyJourney offers great offers, some of the lowest airfares, exclusive discounts and a seamless online booking experience. Flight, hotel and holiday bookings through the desktop or mobile site is a delightfully customer friendly experience, and with just a few clicks you can complete your booking. With features like Instant Discounts, Fare Calendar, MyRewards Program, MyWallet and many more, the overall booking experience with HappyJourney constantly adds value to its product and continues to offer the best to its customers.
+		<br>
+		<h3>Booking Flights with HappyJourney</h3>
+		<br>
+		Book your flights tickets with India’s leading flight booking company since the year 2000. While booking flights with HappyJourney, you can expect the ultimate online booking experience. With premium customer service, 24/7 dedicated helpline for support, and over 5 million delighted customers, HappyJourney takes great pride in enabling customer satisfaction. With a cheapest flight guarantee, book your tickets at the lowest airfares. Avail great offers, exclusive deals for loyal customers and get instant updates for your flight status and fare drops.
+		<br>
+		<h3>Domestic Flights with HappyJourney</h3>
+		<br>
+		HappyJourney is India’s leading player for flight bookings, and have a dominant position in the domestic flights sector. With the cheapest fare guarantee, experience great value at the lowest price. Instant notifications ensure current flight status, instant fare drops, amazing discounts, instant refunds and rebook options, price comparisons and many more interesting features.
+	</div>
+</div>
+<div id="footer">
+	<div id="footer_content">
+		<h3>Follow Us On</h3>
+		<br>
+		<a href="https://www.facebook.com">Facebook</a>
+		<br>
+		<a href="https://www.twitter.com">Twitter</a>
+		<br>
+		<a href="https://plus.google.com">Google+</a>
+		<br>
+		<h2>HappyJourney Pvt. Ltd</h2>
+		<br>
+		<h2>ESTD.2000.CRAFTED IN INDIA</h2>
+	</div>
+</div>
+<!--
+<div id="features">
+	<div id="subhead">
+		<h1>Features of website</h1>
+	</div>
+	<div id="pics"> 
+    <img src="previtemplate-1.png" width="200" height="200" /> 
+    <img src="ebooks-templates-1.png" width="200" height="200" /> 
+    <img src="t2-1.png" width="200" height="200" /> 
+	<img src="t3-1.png" width="200" height="200" />
+	</div> 
+	
+	<div id="fone">
+		<img src="previtemplate-1.png" width="100%">
+	</div>
+	<div id="ftwo">
+		<img src="ebooks-templates-1.png" width="100%">
+	</div>
+	<div id="fthree">
+		<img src="t2-1.png" width="100%">
+	</div>
+	<div id="ffour">
+		<img src="t3-1.png" width="100%">
+	</div> -->
+</div>
+<!--
+<div id="aboutus">
+	<div id="subtopics">
+		<h1>About Us</h1>
+	</div>
+	<div id="subcontent">
+		<p>We are going through same phase as yours and we do understand the difficult situations through which you pass.We are also<br>engineering students studying in 1st year,2nd year, 3rd year and final year respectively</p>
+	</div>
+</div>
+<div id="contact">
+	<div id="leftblock">
+		<div id="contacthead">
+			<h1>Contact Us!!!</h1>
+		</div>
+		<div id="contactcontent">
+			<p>Feel free to tell any suggestion that could help budding engineers...We are<br>also open for any messages you have in your mind.</p>
+		</div>
+	</div>
+	<div id="rightblock">
+	<form>
+	<fieldset>
+	<legend>Information</legend>
+	<input type="text" name="yourname" placeholder="Your Name..." size="80" id="name"><br><br>
+	<input type="email" name="yourmail" placeholder="Your E-mail Id..." size="80" id="mail"><br><br>
+	<textarea name="yourmessage" placeholder="Your Message..." rows="5" cols="80" size="80" id="message"></textarea>
+	</fieldset>
+	</form>
+	</div>
+</div>
+-->
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+// Get the modal
+var modal2 = document.getElementById('id02');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal2) {
+        modal2.style.display = "none";
+    }
+}
+</script>
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex> slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script>
+		$('#pics').cycle({ 
+		fx:    'fade', 
+		speed:  1000 
+	});
+		
+	</script>
+</body>
+</html>
